@@ -9,7 +9,6 @@
 puts 'Cleaning database...'
 Ingredient.destroy_all
 
-
 puts 'Creating Ingredients...'
 
 Ingredient.create(name: "lemon")
