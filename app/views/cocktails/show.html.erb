@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <h2><%= @cocktail.name %></h2>
-      <h4>Doses</h4>
+      <h4>Recipe:</h4>
       <div class="doses">
       <!-- il faut essayer de faire un truc avec le flexbox -->
         <% @cocktail.doses.each do |dose| %>
@@ -11,7 +11,6 @@
           </div>
         <% end %>
       <%= link_to 'add a dose', new_cocktail_dose_path(@cocktail), class:"btn btn-primary" %>
-      <%= link_to 'add an ingredient', new_cocktail_ingredient_path(@cocktail), class:"btn btn-primary" %>
       </div>
     </div>
   </div>
