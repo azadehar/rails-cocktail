@@ -1,23 +1,31 @@
-<div class="container text-center">
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <h2><%= @cocktail.name %></h2>
-      <h4>Recipe:</h4>
-      <div class="doses">
-      <!-- il faut essayer de faire un truc avec le flexbox -->
-        <% @cocktail.doses.each do |dose| %>
-          <div>
-          <p> <%= dose.ingredient.name %> | <%= dose.description %> <%= link_to "x", cocktail_dose_path(@cocktail, dose), method: :delete %></p>
-          </div>
-        <% end %>
-      <%= link_to 'add a dose', new_cocktail_dose_path(@cocktail), class:"btn btn-primary" %>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+  <%= link_to "Back", root_path %>
 
   <div class="row">
-    <div class="col-xs-12">
-      <%= link_to 'back', cocktails_path, class:"btn btn-success" %>
+    <div class="col-sm-12 col-md-6">
+      <h3>Recipe</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Ingredient</th>
+            <th>Description</th>
+          </thead>
+          <% @cocktail.doses.each do |dose| %>
+            <tr>
+              <td><%= dose.ingredient.name %></td>
+              <td><%= dose.description %></td>
+              <td>
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_dose"></i>
+                  <p>hhhh</p>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+
