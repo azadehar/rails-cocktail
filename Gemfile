@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.12.0'
+gem "font-awesome-rails"
 gem 'simple_form'
 
 # Use ActiveStorage variant
